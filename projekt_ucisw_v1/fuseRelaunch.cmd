@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/projekty_ucisw/projekt_ucisw_v1/projekt_ucisw_v1/test_timer_isim_beh.exe" -prj "/home/ise/projekty_ucisw/projekt_ucisw_v1/projekt_ucisw_v1/test_timer_beh.prj" "work.test_timer" 

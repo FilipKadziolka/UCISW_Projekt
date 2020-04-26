@@ -1,0 +1,48 @@
+ISim log file
+Running: /home/ise/projekty_ucisw/projekt_ucisw_v1/projekt_ucisw_v1/test_timer_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/projekty_ucisw/projekt_ucisw_v1/projekt_ucisw_v1/test_timer_isim_beh.wdb 
+ISim P.20160913 (signature 0xfbc00daa)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run all
+Stopped at time : 24971811 ns : File "/home/ise/projekty_ucisw/projekt_ucisw_v1/projekt_ucisw_v1/test_timer.vhd" Line 39
+# exit 0
