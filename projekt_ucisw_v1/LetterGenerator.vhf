@@ -6,12 +6,12 @@
 -- /___/  \  /    Vendor: Xilinx 
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
---  /   /         Filename : LetterGenerator_drc.vhf
--- /___/   /\     Timestamp : 05/03/2020 16:50:30
+--  /   /         Filename : LetterGenerator.vhf
+-- /___/   /\     Timestamp : 05/03/2020 16:51:41
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\sch2hdl.exe -intstyle ise -family aspartan6 -flat -suppress -vhdl LetterGenerator_drc.vhf -w C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator.sch
+--Command: sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator.vhf -w C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator.sch
 --Design Name: LetterGenerator
 --Device: aspartan6
 --Purpose:

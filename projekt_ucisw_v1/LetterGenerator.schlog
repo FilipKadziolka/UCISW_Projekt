@@ -1,0 +1,12 @@
+select figure at 407 2518 8 -wires -sn=1
+select figure at 99 2435 8 -wires -sn=1
+select figure at 736 2156 8 -wires -sn=1
+update symbols LetterGenerator
+add instance LetterGenerator 608 2496 R0 -sn=1
+select figure at 746 2431 8 -wires -sn=1
+delete selection -sn=1
+select figure at 802 2454 8 -wires -sn=1
+undo
+undo
+undo
+undo

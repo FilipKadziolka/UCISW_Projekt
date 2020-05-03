@@ -6,50 +6,24 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="XLXN_3" />
-        <signal name="XLXN_4" />
-        <signal name="XLXN_6" />
         <signal name="clk" />
-        <signal name="XLXN_9" />
-        <signal name="XLXN_10" />
-        <signal name="XLXN_11" />
-        <signal name="XLXN_12" />
-        <signal name="XLXN_13" />
-        <signal name="XLXN_14" />
-        <signal name="XLXN_15" />
-        <signal name="XLXN_16" />
-        <signal name="XLXN_17" />
-        <signal name="XLXN_20" />
-        <signal name="XLXN_19" />
-        <signal name="XLXN_22" />
+        <signal name="I1">
+        </signal>
         <signal name="XLXN_23" />
-        <signal name="XLXN_24" />
-        <signal name="XLXN_25" />
-        <signal name="XLXN_27" />
-        <signal name="XLXN_29" />
-        <signal name="XLXN_31" />
-        <signal name="XLXN_32" />
-        <signal name="XLXN_33" />
-        <signal name="XLXN_34" />
-        <signal name="Letter3">
-        </signal>
-        <signal name="Letter4">
-        </signal>
-        <signal name="XLXN_39" />
+        <signal name="Letter(3)" />
+        <signal name="Letter(4)" />
         <signal name="XLXN_45" />
-        <signal name="Letter1">
-        </signal>
+        <signal name="Letter(1)" />
         <signal name="XLXN_48" />
         <signal name="XLXN_49" />
-        <signal name="Letter2">
-        </signal>
-        <signal name="Letter0">
-        </signal>
+        <signal name="Letter(2)" />
+        <signal name="Letter(0)" />
         <signal name="Letter(7:0)" />
-        <signal name="Letter5" />
-        <signal name="Letter6" />
-        <signal name="Letter7" />
         <signal name="XLXN_56" />
+        <signal name="XLXN_62" />
+        <signal name="Letter(7)" />
+        <signal name="Letter(6)" />
+        <signal name="Letter(5)" />
         <port polarity="Input" name="clk" />
         <port polarity="Output" name="Letter(7:0)" />
         <blockdef name="fd">
@@ -118,66 +92,66 @@
         </blockdef>
         <block symbolname="fd" name="XLXI_1">
             <blockpin signalname="clk" name="C" />
-            <blockpin signalname="Letter3" name="D" />
+            <blockpin signalname="Letter(3)" name="D" />
             <blockpin signalname="XLXN_23" name="Q" />
         </block>
         <block symbolname="fd" name="XLXI_2">
             <blockpin signalname="clk" name="C" />
             <blockpin signalname="XLXN_23" name="D" />
-            <blockpin signalname="Letter1" name="Q" />
+            <blockpin signalname="Letter(1)" name="Q" />
         </block>
         <block symbolname="fd" name="XLXI_3">
             <blockpin signalname="clk" name="C" />
-            <blockpin signalname="Letter1" name="D" />
+            <blockpin signalname="Letter(1)" name="D" />
             <blockpin signalname="XLXN_49" name="Q" />
         </block>
         <block symbolname="fd" name="XLXI_4">
             <blockpin signalname="clk" name="C" />
-            <blockpin signalname="Letter4" name="D" />
-            <blockpin signalname="Letter3" name="Q" />
+            <blockpin signalname="Letter(4)" name="D" />
+            <blockpin signalname="Letter(3)" name="Q" />
         </block>
         <block symbolname="fd" name="XLXI_5">
             <blockpin signalname="clk" name="C" />
-            <blockpin signalname="XLXN_15" name="D" />
-            <blockpin signalname="Letter4" name="Q" />
+            <blockpin signalname="I1" name="D" />
+            <blockpin signalname="Letter(4)" name="Q" />
         </block>
         <block symbolname="xnor2" name="XLXI_6">
             <blockpin signalname="XLXN_49" name="I0" />
             <blockpin signalname="XLXN_23" name="I1" />
-            <blockpin signalname="XLXN_15" name="O" />
+            <blockpin signalname="I1" name="O" />
         </block>
         <block symbolname="and2" name="XLXI_7">
-            <blockpin signalname="Letter3" name="I0" />
-            <blockpin signalname="Letter4" name="I1" />
+            <blockpin signalname="Letter(3)" name="I0" />
+            <blockpin signalname="Letter(4)" name="I1" />
             <blockpin signalname="XLXN_45" name="O" />
         </block>
         <block symbolname="nor2b1" name="XLXI_10">
             <blockpin signalname="XLXN_23" name="I0" />
             <blockpin signalname="XLXN_45" name="I1" />
-            <blockpin signalname="Letter2" name="O" />
+            <blockpin signalname="Letter(2)" name="O" />
         </block>
         <block symbolname="and2" name="XLXI_11">
-            <blockpin signalname="Letter1" name="I0" />
+            <blockpin signalname="Letter(1)" name="I0" />
             <blockpin signalname="XLXN_45" name="I1" />
             <blockpin signalname="XLXN_48" name="O" />
         </block>
         <block symbolname="nor2b1" name="XLXI_12">
             <blockpin signalname="XLXN_49" name="I0" />
             <blockpin signalname="XLXN_48" name="I1" />
-            <blockpin signalname="Letter0" name="O" />
+            <blockpin signalname="Letter(0)" name="O" />
         </block>
         <block symbolname="gnd" name="XLXI_13">
-            <blockpin signalname="Letter5" name="G" />
+            <blockpin signalname="Letter(5)" name="G" />
         </block>
         <block symbolname="gnd" name="XLXI_14">
-            <blockpin signalname="Letter7" name="G" />
+            <blockpin signalname="Letter(7)" name="G" />
         </block>
         <block symbolname="gnd" name="XLXI_15">
             <blockpin signalname="XLXN_56" name="G" />
         </block>
         <block symbolname="inv" name="XLXI_16">
             <blockpin signalname="XLXN_56" name="I" />
-            <blockpin signalname="Letter6" name="O" />
+            <blockpin signalname="Letter(6)" name="O" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -203,31 +177,27 @@
         <instance x="2352" y="2144" name="XLXI_3" orien="R0" />
         <instance x="1920" y="2144" name="XLXI_2" orien="R0" />
         <instance x="512" y="2144" name="XLXI_5" orien="R0" />
-        <branch name="XLXN_15">
-            <wire x2="464" y1="1520" y2="1888" x1="464" />
-            <wire x2="512" y1="1888" y2="1888" x1="464" />
-            <wire x2="1552" y1="1520" y2="1520" x1="464" />
-        </branch>
         <instance x="992" y="2144" name="XLXI_4" orien="R0" />
-        <branch name="Letter3">
-            <attrtext style="alignment:SOFT-VLEFT;fontsize:28;fontname:Arial" attrname="Name" x="1648" y="304" type="branch" />
+        <branch name="Letter(3)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1648" y="448" type="branch" />
             <wire x2="1392" y1="1888" y2="1888" x1="1376" />
             <wire x2="1440" y1="1888" y2="1888" x1="1392" />
             <wire x2="1392" y1="1376" y2="1888" x1="1392" />
             <wire x2="1648" y1="1376" y2="1376" x1="1392" />
             <wire x2="1824" y1="1376" y2="1376" x1="1648" />
-            <wire x2="1648" y1="304" y2="1376" x1="1648" />
+            <wire x2="1648" y1="224" y2="448" x1="1648" />
+            <wire x2="1648" y1="448" y2="1376" x1="1648" />
             <wire x2="1824" y1="1312" y2="1376" x1="1824" />
         </branch>
-        <branch name="Letter4">
-            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1584" y="336" type="branch" />
+        <branch name="Letter(4)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1584" y="432" type="branch" />
             <wire x2="944" y1="1888" y2="1888" x1="896" />
             <wire x2="992" y1="1888" y2="1888" x1="944" />
             <wire x2="944" y1="1360" y2="1888" x1="944" />
             <wire x2="1584" y1="1360" y2="1360" x1="944" />
             <wire x2="1760" y1="1360" y2="1360" x1="1584" />
-            <wire x2="1584" y1="304" y2="336" x1="1584" />
-            <wire x2="1584" y1="336" y2="1360" x1="1584" />
+            <wire x2="1584" y1="224" y2="432" x1="1584" />
+            <wire x2="1584" y1="432" y2="1360" x1="1584" />
             <wire x2="1760" y1="1312" y2="1360" x1="1760" />
         </branch>
         <instance x="1888" y="1312" name="XLXI_7" orien="R270" />
@@ -251,15 +221,18 @@
             <wire x2="2240" y1="896" y2="896" x1="2208" />
         </branch>
         <instance x="2240" y="1024" name="XLXI_11" orien="R0" />
-        <branch name="Letter1">
-            <attrtext style="alignment:SOFT-VLEFT;fontsize:28;fontname:Arial" attrname="Name" x="2112" y="336" type="branch" />
+        <branch name="Letter(1)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2112" y="416" type="branch" />
             <wire x2="2112" y1="960" y2="960" x1="2032" />
             <wire x2="2240" y1="960" y2="960" x1="2112" />
             <wire x2="2032" y1="960" y2="1392" x1="2032" />
             <wire x2="2320" y1="1392" y2="1392" x1="2032" />
             <wire x2="2320" y1="1392" y2="1888" x1="2320" />
             <wire x2="2352" y1="1888" y2="1888" x1="2320" />
-            <wire x2="2112" y1="336" y2="960" x1="2112" />
+            <wire x2="2096" y1="224" y2="368" x1="2096" />
+            <wire x2="2112" y1="368" y2="368" x1="2096" />
+            <wire x2="2112" y1="368" y2="416" x1="2112" />
+            <wire x2="2112" y1="416" y2="960" x1="2112" />
             <wire x2="2320" y1="1888" y2="1888" x1="2304" />
         </branch>
         <branch name="XLXN_48">
@@ -277,39 +250,70 @@
             <wire x2="2864" y1="1344" y2="1808" x1="2864" />
             <wire x2="2800" y1="1888" y2="1888" x1="2736" />
         </branch>
-        <branch name="Letter2">
-            <attrtext style="alignment:SOFT-VLEFT;fontsize:28;fontname:Arial" attrname="Name" x="1904" y="336" type="branch" />
-            <wire x2="1904" y1="336" y2="864" x1="1904" />
+        <branch name="Letter(2)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1904" y="448" type="branch" />
+            <wire x2="1904" y1="224" y2="448" x1="1904" />
+            <wire x2="1904" y1="448" y2="864" x1="1904" />
         </branch>
-        <branch name="Letter0">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2336" y="368" type="branch" />
-            <wire x2="2336" y1="368" y2="368" x1="2304" />
-            <wire x2="2848" y1="368" y2="368" x1="2336" />
+        <branch name="Letter(0)">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2480" y="368" type="branch" />
+            <wire x2="2304" y1="224" y2="368" x1="2304" />
+            <wire x2="2480" y1="368" y2="368" x1="2304" />
+            <wire x2="2848" y1="368" y2="368" x1="2480" />
             <wire x2="2848" y1="368" y2="960" x1="2848" />
             <wire x2="2848" y1="960" y2="960" x1="2784" />
         </branch>
         <branch name="Letter(7:0)">
-            <wire x2="2720" y1="128" y2="128" x1="1520" />
+            <wire x2="1088" y1="128" y2="128" x1="1024" />
+            <wire x2="1200" y1="128" y2="128" x1="1088" />
+            <wire x2="1296" y1="128" y2="128" x1="1200" />
+            <wire x2="1584" y1="128" y2="128" x1="1296" />
+            <wire x2="1648" y1="128" y2="128" x1="1584" />
+            <wire x2="1904" y1="128" y2="128" x1="1648" />
+            <wire x2="2096" y1="128" y2="128" x1="1904" />
+            <wire x2="2304" y1="128" y2="128" x1="2096" />
+            <wire x2="2720" y1="128" y2="128" x1="2304" />
         </branch>
         <iomarker fontsize="28" x="2720" y="128" name="Letter(7:0)" orien="R0" />
-        <branch name="Letter5">
-            <attrtext style="alignment:SOFT-VLEFT;fontsize:28;fontname:Arial" attrname="Name" x="1296" y="320" type="branch" />
-            <wire x2="1296" y1="320" y2="448" x1="1296" />
-        </branch>
-        <branch name="Letter6">
-            <attrtext style="alignment:SOFT-VLEFT;fontsize:28;fontname:Arial" attrname="Name" x="1184" y="304" type="branch" />
-            <wire x2="1184" y1="304" y2="432" x1="1184" />
-        </branch>
-        <branch name="Letter7">
-            <attrtext style="alignment:SOFT-VLEFT;fontsize:28;fontname:Arial" attrname="Name" x="1072" y="320" type="branch" />
-            <wire x2="1072" y1="320" y2="416" x1="1072" />
-        </branch>
-        <instance x="1008" y="544" name="XLXI_14" orien="R0" />
         <instance x="1232" y="576" name="XLXI_13" orien="R0" />
         <instance x="1216" y="656" name="XLXI_16" orien="R270" />
         <branch name="XLXN_56">
             <wire x2="1184" y1="656" y2="688" x1="1184" />
         </branch>
         <instance x="1120" y="816" name="XLXI_15" orien="R0" />
+        <instance x="1008" y="624" name="XLXI_14" orien="R0" />
+        <bustap x2="1088" y1="128" y2="224" x1="1088" />
+        <bustap x2="1200" y1="128" y2="224" x1="1200" />
+        <bustap x2="1296" y1="128" y2="224" x1="1296" />
+        <bustap x2="1584" y1="128" y2="224" x1="1584" />
+        <bustap x2="1648" y1="128" y2="224" x1="1648" />
+        <bustap x2="1904" y1="128" y2="224" x1="1904" />
+        <bustap x2="2096" y1="128" y2="224" x1="2096" />
+        <bustap x2="2304" y1="128" y2="224" x1="2304" />
+        <branch name="Letter(7)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1088" y="256" type="branch" />
+            <wire x2="1088" y1="288" y2="288" x1="1072" />
+            <wire x2="1072" y1="288" y2="496" x1="1072" />
+            <wire x2="1088" y1="224" y2="256" x1="1088" />
+            <wire x2="1088" y1="256" y2="288" x1="1088" />
+        </branch>
+        <branch name="Letter(6)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1200" y="240" type="branch" />
+            <wire x2="1200" y1="288" y2="288" x1="1184" />
+            <wire x2="1184" y1="288" y2="432" x1="1184" />
+            <wire x2="1200" y1="224" y2="240" x1="1200" />
+            <wire x2="1200" y1="240" y2="288" x1="1200" />
+        </branch>
+        <branch name="Letter(5)">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1296" y="272" type="branch" />
+            <wire x2="1296" y1="224" y2="272" x1="1296" />
+            <wire x2="1296" y1="272" y2="448" x1="1296" />
+        </branch>
+        <branch name="I1">
+            <wire x2="1552" y1="1520" y2="1520" x1="464" />
+            <wire x2="464" y1="1520" y2="1776" x1="464" />
+            <wire x2="464" y1="1776" y2="1888" x1="464" />
+            <wire x2="512" y1="1888" y2="1888" x1="464" />
+        </branch>
     </sheet>
 </drawing>
