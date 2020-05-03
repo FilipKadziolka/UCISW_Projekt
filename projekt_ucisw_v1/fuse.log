@@ -1,10 +1,10 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator_LetterGenerator_sch_tb_isim_beh.exe -prj C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator_LetterGenerator_sch_tb_beh.prj work.LetterGenerator_LetterGenerator_sch_tb 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit_Register8Bit_sch_tb_isim_beh.exe -prj C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit_Register8Bit_sch_tb_beh.prj work.Register8Bit_Register8Bit_sch_tb 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator.vhf" into library work
-Parsing VHDL file "C:/UCISW_projekt/projekt_ucisw_v1/TestLetterGenerator.vhd" into library work
+Parsing VHDL file "C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit.vhf" into library work
+Parsing VHDL file "C:/UCISW_projekt/projekt_ucisw_v1/TestRegister8Bit.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -12,16 +12,11 @@ Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling package vcomponents
 Compiling architecture fd_v of entity FD [\FD('0')\]
-Compiling architecture xnor2_v of entity XNOR2 [xnor2_default]
-Compiling architecture and2_v of entity AND2 [and2_default]
-Compiling architecture nor2b1_v of entity NOR2B1 [nor2b1_default]
-Compiling architecture gnd_v of entity GND [gnd_default]
-Compiling architecture inv_v of entity INV [inv_default]
-Compiling architecture behavioral of entity LetterGenerator [lettergenerator_default]
-Compiling architecture behavioral of entity lettergenerator_lettergenerator_...
+Compiling architecture behavioral of entity Register8Bit [register8bit_default]
+Compiling architecture behavioral of entity register8bit_register8bit_sch_tb
 Time Resolution for simulation is 1ps.
-Waiting for 4 sub-compilation(s) to finish...
-Compiled 19 VHDL Units
-Built simulation executable C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator_LetterGenerator_sch_tb_isim_beh.exe
-Fuse Memory Usage: 49948 KB
-Fuse CPU Usage: 968 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 9 VHDL Units
+Built simulation executable C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit_Register8Bit_sch_tb_isim_beh.exe
+Fuse Memory Usage: 50260 KB
+Fuse CPU Usage: 812 ms

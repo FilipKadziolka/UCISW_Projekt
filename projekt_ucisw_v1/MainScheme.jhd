@@ -1,0 +1,3 @@
+MODULE MainScheme
+	SUBMODULE LetterGenerator
+		INSTANCE XLXI_1

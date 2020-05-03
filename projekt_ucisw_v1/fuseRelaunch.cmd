@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator_LetterGenerator_sch_tb_isim_beh.exe" -prj "C:/UCISW_projekt/projekt_ucisw_v1/LetterGenerator_LetterGenerator_sch_tb_beh.prj" "work.LetterGenerator_LetterGenerator_sch_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit_Register8Bit_sch_tb_isim_beh.exe" -prj "C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit_Register8Bit_sch_tb_beh.prj" "work.Register8Bit_Register8Bit_sch_tb" 
