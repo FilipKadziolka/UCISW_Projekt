@@ -1,0 +1,9 @@
+[Inputs]
+Clk
+RST
+set_time
+stop
+[Outputs]
+end_time
+get_time
+[BiDir]

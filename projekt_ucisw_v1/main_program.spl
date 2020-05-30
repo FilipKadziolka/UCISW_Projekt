@@ -1,0 +1,13 @@
+[Inputs]
+RST
+CLK
+end_timer
+get_time
+DO_RDY
+=random_generate_ascii[7:0]=
+=kbd_ascii[7:0]=
+[Outputs]
+rst_timer
+set_timer
+stop_timer
+[BiDir]

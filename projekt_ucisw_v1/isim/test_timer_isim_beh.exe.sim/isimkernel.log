@@ -2,9 +2,9 @@ Command line:
    test_timer_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  42523
+     -socket  43684
 
-Fri May 29 15:31:18 2020
+Fri May 29 19:50:16 2020
 
 
  Elaboration Time: 0.09 sec
@@ -20,9 +20,9 @@ Fri May 29 15:31:18 2020
  Total Traceable Variables  : 15
  Total Scalar Nets and Variables : 495
 
- Total Simulation Time: 17.5 sec
+ Total Simulation Time: 17.6 sec
 
  Current Memory Usage: 276.32 Meg
 
-Fri May 29 15:31:46 2020
+Fri May 29 19:52:06 2020
 

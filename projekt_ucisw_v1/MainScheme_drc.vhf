@@ -6,13 +6,13 @@
 -- /___/  \  /    Vendor: Xilinx 
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
---  /   /         Filename : LetterGenerator_drc.vhf
--- /___/   /\     Timestamp : 05/29/2020 20:27:16
+--  /   /         Filename : MainScheme_drc.vhf
+-- /___/   /\     Timestamp : 05/29/2020 20:28:11
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl LetterGenerator_drc.vhf -w /home/ise/projekty_ucisw/projekt_ucisw_v1/LetterGenerator.sch
---Design Name: LetterGenerator
+--Command: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl MainScheme_drc.vhf -w /home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.sch
+--Design Name: MainScheme
 --Device: aspartan6
 --Purpose:
 --    This vhdl netlist is translated from an ECS schematic. It can be 
@@ -25,12 +25,12 @@ use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
-entity LetterGenerator is
+entity LetterGenerator_MUSER_MainScheme is
    port ( clk    : in    std_logic; 
           Letter : out   std_logic_vector (7 downto 0));
-end LetterGenerator;
+end LetterGenerator_MUSER_MainScheme;
 
-architecture BEHAVIORAL of LetterGenerator is
+architecture BEHAVIORAL of LetterGenerator_MUSER_MainScheme is
    attribute BOX_TYPE   : string ;
    signal I1           : std_logic;
    signal XLXN_23      : std_logic;
@@ -143,6 +143,82 @@ begin
    XLXI_16 : INV
       port map (I=>XLXN_56,
                 O=>Letter_DUMMY(6));
+   
+end BEHAVIORAL;
+
+
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+
+entity MainScheme is
+   port ( CLK       : in    std_logic; 
+          DO_RDY    : in    std_logic; 
+          kbd_ascii : in    std_logic_vector (7 downto 0); 
+          RST       : in    std_logic);
+end MainScheme;
+
+architecture BEHAVIORAL of MainScheme is
+   signal XLXN_2    : std_logic;
+   signal XLXN_3    : std_logic;
+   signal XLXN_4    : std_logic;
+   signal XLXN_5    : std_logic;
+   signal XLXN_6    : std_logic;
+   signal XLXN_24   : std_logic_vector (7 downto 0);
+   component main_program
+      port ( RST                   : in    std_logic; 
+             CLK                   : in    std_logic; 
+             end_timer             : in    std_logic; 
+             get_time              : in    std_logic; 
+             DO_RDY                : in    std_logic; 
+             kbd_ascii             : in    std_logic_vector (7 downto 0); 
+             rst_timer             : out   std_logic; 
+             set_timer             : out   std_logic; 
+             stop_timer            : out   std_logic; 
+             random_generate_ascii : in    std_logic_vector (7 downto 0));
+   end component;
+   
+   component timer
+      port ( Clk      : in    std_logic; 
+             RST      : in    std_logic; 
+             set_time : in    std_logic; 
+             stop     : in    std_logic; 
+             end_time : out   std_logic; 
+             get_time : out   std_logic);
+   end component;
+   
+   component LetterGenerator_MUSER_MainScheme
+      port ( clk    : in    std_logic; 
+             Letter : out   std_logic_vector (7 downto 0));
+   end component;
+   
+begin
+   XLXI_5 : main_program
+      port map (CLK=>CLK,
+                DO_RDY=>DO_RDY,
+                end_timer=>XLXN_5,
+                get_time=>XLXN_6,
+                kbd_ascii(7 downto 0)=>kbd_ascii(7 downto 0),
+                random_generate_ascii(7 downto 0)=>XLXN_24(7 downto 0),
+                RST=>RST,
+                rst_timer=>XLXN_2,
+                set_timer=>XLXN_3,
+                stop_timer=>XLXN_4);
+   
+   XLXI_7 : timer
+      port map (Clk=>CLK,
+                RST=>XLXN_2,
+                set_time=>XLXN_3,
+                stop=>XLXN_4,
+                end_time=>XLXN_5,
+                get_time=>XLXN_6);
+   
+   XLXI_9 : LetterGenerator_MUSER_MainScheme
+      port map (clk=>CLK,
+                Letter(7 downto 0)=>XLXN_24(7 downto 0));
    
 end BEHAVIORAL;
 

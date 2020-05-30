@@ -7,8 +7,7 @@
     </attr>
     <netlist>
         <signal name="clk" />
-        <signal name="I1">
-        </signal>
+        <signal name="I1" />
         <signal name="XLXN_23" />
         <signal name="Letter(3)" />
         <signal name="Letter(4)" />
@@ -20,7 +19,6 @@
         <signal name="Letter(0)" />
         <signal name="Letter(7:0)" />
         <signal name="XLXN_56" />
-        <signal name="XLXN_62" />
         <signal name="Letter(7)" />
         <signal name="Letter(6)" />
         <signal name="Letter(5)" />
