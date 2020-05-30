@@ -6,18 +6,36 @@
 -- /___/  \  /    Vendor: Xilinx 
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
---  /   /         Filename : LetterGenerator.vhf
+--  /   /         Filename : MainScheme.vhf
 -- /___/   /\     Timestamp : 05/29/2020 15:30:12
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl /home/ise/projekty_ucisw/projekt_ucisw_v1/LetterGenerator.vhf -w /home/ise/projekty_ucisw/projekt_ucisw_v1/LetterGenerator.sch
---Design Name: LetterGenerator
+--Command: sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl /home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf -w /home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.sch
+--Design Name: MainScheme
 --Device: aspartan6
 --Purpose:
 --    This vhdl netlist is translated from an ECS schematic. It can be 
 --    synthesized and simulated, but it should not be modified. 
 --
+----- CELL COMP8_HXILINX_MainScheme -----
+  
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity COMP8_HXILINX_MainScheme is
+port(
+    EQ  : out std_logic;
+
+    A   : in std_logic_vector(7 downto 0);
+    B   : in std_logic_vector(7 downto 0)
+  );
+end COMP8_HXILINX_MainScheme;
+
+architecture COMP8_HXILINX_MainScheme_V of COMP8_HXILINX_MainScheme is
+begin
+  EQ <= '1' when (A=B) else '0';
+end COMP8_HXILINX_MainScheme_V;
 
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -25,12 +43,12 @@ use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
-entity LetterGenerator is
+entity LetterGenerator_MUSER_MainScheme is
    port ( clk    : in    std_logic; 
           Letter : out   std_logic_vector (7 downto 0));
-end LetterGenerator;
+end LetterGenerator_MUSER_MainScheme;
 
-architecture BEHAVIORAL of LetterGenerator is
+architecture BEHAVIORAL of LetterGenerator_MUSER_MainScheme is
    attribute BOX_TYPE   : string ;
    signal I1           : std_logic;
    signal XLXN_23      : std_logic;
@@ -143,6 +161,47 @@ begin
    XLXI_16 : INV
       port map (I=>XLXN_56,
                 O=>Letter_DUMMY(6));
+   
+end BEHAVIORAL;
+
+
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+
+entity MainScheme is
+   port ( );
+end MainScheme;
+
+architecture BEHAVIORAL of MainScheme is
+   attribute HU_SET     : string ;
+   signal XLXI_1_clk_openSignal : std_logic;
+   signal XLXI_2_A_openSignal   : std_logic_vector (7 downto 0);
+   signal XLXI_2_B_openSignal   : std_logic_vector (7 downto 0);
+   component LetterGenerator_MUSER_MainScheme
+      port ( clk    : in    std_logic; 
+             Letter : out   std_logic_vector (7 downto 0));
+   end component;
+   
+   component COMP8_HXILINX_MainScheme
+      port ( A  : in    std_logic_vector (7 downto 0); 
+             B  : in    std_logic_vector (7 downto 0); 
+             EQ : out   std_logic);
+   end component;
+   
+   attribute HU_SET of XLXI_2 : label is "XLXI_2_0";
+begin
+   XLXI_1 : LetterGenerator_MUSER_MainScheme
+      port map (clk=>XLXI_1_clk_openSignal,
+                Letter=>open);
+   
+   XLXI_2 : COMP8_HXILINX_MainScheme
+      port map (A(7 downto 0)=>XLXI_2_A_openSignal(7 downto 0),
+                B(7 downto 0)=>XLXI_2_B_openSignal(7 downto 0),
+                EQ=>open);
    
 end BEHAVIORAL;
 

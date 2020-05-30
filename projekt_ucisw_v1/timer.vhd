@@ -3,62 +3,80 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
  
 entity timer is
-generic(ClockFrequencyHz : integer);
 port(
     Clk     : in std_logic;
-    nRst    : in std_logic; -- Negative reset
-    Seconds : inout integer;
-	 Seconds_per_teen : inout integer;
-	 end_time : out std_logic;
-	 set_time : in integer;
-    Minutes : inout integer;
-    Hours   : inout integer);
+    RST    	: in std_logic; -- 1 reset
+    end_time    : out std_logic;
+    set_time    : in integer;
+    get_time    : out integer;
+	 stop 	: in std_logic
+	 );
 end entity;
  
 architecture rtl of timer is
  
- 
-    -- Signal for counting clock periods
-    signal Ticks : integer;
- 
+	constant CLOCK_DIVIDER : integer := 1000000;
+	signal clock_divide_counter : integer range 0 to CLOCK_DIVIDER-1 := 0;
+	signal one_hz_pulse : std_logic := '0';
+	signal s : integer := 000000;
+   
+   signal save_time : std_logic := '0';
+   
+	 
 begin
  
-    process(Clk) is
-    begin
-        if rising_edge(Clk) then
- 
-            -- If the negative reset signal is active
-            if nRst = '0' then
-                Ticks   <= 0;
-                Seconds <= 0;
-                Minutes <= 0;
-                Hours   <= 0;
-					 end_time <= '0';
-            else
- 
-                -- True once every second
-                if Ticks = ClockFrequencyHz/10 - 1 then
-                    Ticks <= 0;
- 
-                    if Seconds_per_teen = 9 then
-								Seconds_per_teen <= 0;
-								
-								if Seconds = set_time then
-                                end_time <= '1';
-                            else
-                                Seconds <= Seconds + 1;
-                            end if;
-								
-							else
-                        Seconds_per_teen <= Seconds_per_teen + 1;	
-						  end if;
- 
-                else
-                    Ticks <= Ticks + 1;
-                end if;
- 
-            end if;
-        end if;
-    end process;
- 
+		process (Clk)
+		begin
+			 if (rising_edge(Clk)) then
+				  if (clock_divide_counter = CLOCK_DIVIDER - 1) then
+						clock_divide_counter <= 0;
+						one_hz_pulse <= '1';
+				  else
+						clock_divide_counter <= clock_divide_counter + 1;
+						one_hz_pulse <= '0';
+				  end if;
+			 end if;
+		end process;
+
+		process (Clk, RST)
+		begin
+			 if rising_edge(Clk) then
+					--reset ukladu
+				  if (RST = '1') then
+						s <= 000000;
+						end_time <= '0';
+						--stop <= '0';
+					--zliczenie kazdego pulsu zegara
+				  elsif (one_hz_pulse = '1') then
+						if s = 111011 then
+							 s <= 000000;
+						else
+							 s <= s+1;
+						end if;
+				  end if;
+				  
+				  --kiedy czas sie skonczy
+			  if rising_edge(Clk) then
+					if s = set_time then
+                  end_time <= '1';
+					end if;
+				end if;
+			 end if;
+		end process;
+		
+		process (Clk)
+		begin
+				-- zatrzymanie czasu przez sygnal z zewnatrz
+			 if (rising_edge(Clk)) then
+				  if (stop = '1') then
+						if (save_time = '0') then
+						get_time <= clock_divide_counter + s * CLOCK_DIVIDER;
+						--end_time <= '1';
+                  save_time <= '1';
+						--stop <= '0';
+						end if;
+				  end if;
+			 end if;
+		end process;
+		
 end architecture;

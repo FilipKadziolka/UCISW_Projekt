@@ -1,56 +1,76 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
  
-entity test_timer is
-end entity;
  
-architecture sim of test_timer is
+ENTITY test_timer IS
+END test_timer;
  
-    -- We're slowing down the clock to speed up simulation time
-    constant ClockFrequencyHz : integer := 10; -- 10 Hz
-    constant ClockPeriod      : time := 20 ns / ClockFrequencyHz;
+ARCHITECTURE behavior OF test_timer IS 
  
-    signal Clk     : std_logic := '1';
-    signal nRst    : std_logic := '0';
-	 signal end_time: std_logic := '0';
-	 signal set_time: integer;
-    signal Seconds : integer;
-	 signal Seconds_per_teen : integer;
-    signal Minutes : integer;
-    signal Hours   : integer;
+    -- Component Declaration for the Unit Under Test (UUT)
  
-begin
+    COMPONENT timer
+    PORT(
+         Clk : IN  std_logic;
+         RST : IN  std_logic;
+         end_time : OUT  std_logic;
+         set_time : IN  integer;
+         get_time : OUT  integer;
+         stop : IN  std_logic
+        );
+    END COMPONENT;
+    
+
+   --Inputs
+   signal Clk : std_logic := '0';
+   signal RST : std_logic := '0';
+   signal set_time : integer := 2;
+   signal stop : std_logic := '0';
+
+ 	--Outputs
+   signal end_time : std_logic;
+   signal get_time : integer;
+
+   -- Clock period definitions
+   constant Clk_period : time := 10 ns;
  
-    -- The Device Under Test (DUT)
-    i_Timer : entity work.timer(rtl)
-    generic map(ClockFrequencyHz => ClockFrequencyHz)
-    port map (
-        Clk     => Clk,
-        nRst    => nRst,
-        Seconds => Seconds,
-		  Seconds_per_teen => Seconds_per_teen,
-			end_time => end_time,
-			set_time => set_time,
-        Minutes => Minutes,
-        Hours   => Hours);
+BEGIN
  
-    -- Process for generating the clock
-    Clk <= not Clk after ClockPeriod / 2;
+	-- Instantiate the Unit Under Test (UUT)
+   uut: timer PORT MAP (
+          Clk => Clk,
+          RST => RST,
+          end_time => end_time,
+          set_time => set_time,
+          get_time => get_time,
+          stop => stop
+        );
+
+   -- Clock process definitions
+   Clk_process :process
+   begin
+		Clk <= '0';
+		wait for Clk_period/2;
+		Clk <= '1';
+		wait for Clk_period/2;
+   end process;
  
-    -- Testbench sequence
-    process is
-    begin
-        wait for 100 ns;
- 
-        -- Take the DUT out of reset
-		  
-        nRst <= '0';
-        wait for 10 ns;
-        nRst <= '1';
-        wait for 10 ns;
- 
-        wait;
-    end process;
- 
-end architecture;
+
+   -- Stimulus process
+   stim_proc: process
+   begin		
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
+
+
+
+      -- insert stimulus here 
+		RST <= '1', '0' after 15 ns;
+		stop <= '1' after 15 ms;
+		
+
+      wait;
+   end process;
+
+END;

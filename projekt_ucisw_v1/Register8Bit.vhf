@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Register8Bit.vhf
--- /___/   /\     Timestamp : 05/03/2020 18:56:04
+-- /___/   /\     Timestamp : 05/29/2020 15:30:12
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit.vhf -w C:/UCISW_projekt/projekt_ucisw_v1/Register8Bit.sch
+--Command: sch2hdl -intstyle ise -family aspartan6 -flat -suppress -vhdl /home/ise/projekty_ucisw/projekt_ucisw_v1/Register8Bit.vhf -w /home/ise/projekty_ucisw/projekt_ucisw_v1/Register8Bit.sch
 --Design Name: Register8Bit
 --Device: aspartan6
 --Purpose:
