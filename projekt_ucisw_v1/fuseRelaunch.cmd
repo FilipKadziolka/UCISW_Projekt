@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/projekty_ucisw/projekt_ucisw_v1/testbench_isim_beh.exe" -prj "/home/ise/projekty_ucisw/projekt_ucisw_v1/testbench_beh.prj" "work.testbench" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/projekty_ucisw/projekt_ucisw_v1/test_main_module_isim_beh.exe" -prj "/home/ise/projekty_ucisw/projekt_ucisw_v1/test_main_module_beh.prj" "work.test_main_module" 

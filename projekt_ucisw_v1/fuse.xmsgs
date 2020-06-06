@@ -5,29 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 176: Syntax error near &quot;<arg fmt="%s" index="1">)</arg>&quot;.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 184: Syntax error near &quot;<arg fmt="%s" index="1">component</arg>&quot;.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 187: Syntax error near &quot;<arg fmt="%s" index="1">component</arg>&quot;.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 195: &lt;<arg fmt="%s" index="1">hu_set</arg>&gt; is not declared.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 197: &lt;<arg fmt="%s" index="1">lettergenerator_muser_mainscheme</arg>&gt; is not declared.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 201: &lt;<arg fmt="%s" index="1">comp8_hxilinx_mainscheme</arg>&gt; is not declared.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="580" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 206: Mismatch on label ; expected <arg fmt="%s" index="1">mainscheme</arg>
-</msg>
-
-<msg type="error" file="HDLCompiler" num="854" delta="unknown" >"/home/ise/projekty_ucisw/projekt_ucisw_v1/MainScheme.vhf" Line 175: Unit &lt;<arg fmt="%s" index="1">mainscheme</arg>&gt; ignored due to previous errors.
-</msg>
-
 </messages>
 

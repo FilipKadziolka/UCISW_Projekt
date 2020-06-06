@@ -33,6 +33,10 @@ ARCHITECTURE behavioral OF MainScheme_MainScheme_sch_tb IS
    SIGNAL DO_RDY	:	STD_LOGIC;
    SIGNAL kbd_ascii	:	STD_LOGIC_VECTOR (7 DOWNTO 0);
 
+
+   constant CLK_period : time := 10 ns;
+
+
 BEGIN
 
    UUT: MainScheme PORT MAP(
@@ -42,9 +46,22 @@ BEGIN
 		kbd_ascii => kbd_ascii
    );
 
+   CLK_process :process
+   begin
+		CLK <= '0';
+		wait for CLK_period/2;
+		CLK <= '1';
+		wait for CLK_period/2;
+   end process;
+
+
 -- *** Test Bench - User Defined Section ***
    tb : PROCESS
    BEGIN
+   
+      RST <= '1' after 10 ns, '0' after 30 ns;
+   
+   
       WAIT; -- will wait forever
    END PROCESS;
 -- *** End Test Bench - User Defined Section ***

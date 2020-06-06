@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : MainScheme.vhf
--- /___/   /\     Timestamp : 05/29/2020 15:30:12
+-- /___/   /\     Timestamp : 05/29/2020 22:10:49
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -18,24 +18,6 @@
 --    This vhdl netlist is translated from an ECS schematic. It can be 
 --    synthesized and simulated, but it should not be modified. 
 --
------ CELL COMP8_HXILINX_MainScheme -----
-  
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity COMP8_HXILINX_MainScheme is
-port(
-    EQ  : out std_logic;
-
-    A   : in std_logic_vector(7 downto 0);
-    B   : in std_logic_vector(7 downto 0)
-  );
-end COMP8_HXILINX_MainScheme;
-
-architecture COMP8_HXILINX_MainScheme_V of COMP8_HXILINX_MainScheme is
-begin
-  EQ <= '1' when (A=B) else '0';
-end COMP8_HXILINX_MainScheme_V;
 
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -173,35 +155,70 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity MainScheme is
-   port ( );
+   port ( CLK       : in    std_logic; 
+          DO_RDY    : in    std_logic; 
+          kbd_ascii : in    std_logic_vector (7 downto 0); 
+          RST       : in    std_logic);
 end MainScheme;
 
 architecture BEHAVIORAL of MainScheme is
-   attribute HU_SET     : string ;
-   signal XLXI_1_clk_openSignal : std_logic;
-   signal XLXI_2_A_openSignal   : std_logic_vector (7 downto 0);
-   signal XLXI_2_B_openSignal   : std_logic_vector (7 downto 0);
+   signal XLXN_2    : std_logic;
+   signal XLXN_3    : integer;
+   signal XLXN_4    : std_logic;
+   signal XLXN_5    : std_logic;
+   signal XLXN_6    : integer;
+   signal XLXN_24   : std_logic_vector (7 downto 0);
+   component main_program
+      port ( RST                   : in    std_logic; 
+             CLK                   : in    std_logic; 
+             end_timer             : in    std_logic; 
+             get_time              : in    integer; 
+             DO_RDY                : in    std_logic; 
+             kbd_ascii             : in    std_logic_vector (7 downto 0); 
+             rst_timer             : out   std_logic; 
+             set_timer             : out   integer; 
+             stop_timer            : out   std_logic; 
+             random_generate_ascii : in    std_logic_vector (7 downto 0));
+   end component;
+   
+   component timer
+      port ( Clk      : in    std_logic; 
+             RST      : in    std_logic; 
+             set_time : in    integer; 
+             stop     : in    std_logic; 
+             end_time : out   std_logic; 
+             get_time : out   integer);
+   end component;
+   
    component LetterGenerator_MUSER_MainScheme
       port ( clk    : in    std_logic; 
              Letter : out   std_logic_vector (7 downto 0));
    end component;
    
-   component COMP8_HXILINX_MainScheme
-      port ( A  : in    std_logic_vector (7 downto 0); 
-             B  : in    std_logic_vector (7 downto 0); 
-             EQ : out   std_logic);
-   end component;
-   
-   attribute HU_SET of XLXI_2 : label is "XLXI_2_0";
 begin
-   XLXI_1 : LetterGenerator_MUSER_MainScheme
-      port map (clk=>XLXI_1_clk_openSignal,
-                Letter=>open);
+   XLXI_5 : main_program
+      port map (CLK=>CLK,
+                DO_RDY=>DO_RDY,
+                end_timer=>XLXN_5,
+                get_time=>XLXN_6,
+                kbd_ascii(7 downto 0)=>kbd_ascii(7 downto 0),
+                random_generate_ascii(7 downto 0)=>XLXN_24(7 downto 0),
+                RST=>RST,
+                rst_timer=>XLXN_2,
+                set_timer=>XLXN_3,
+                stop_timer=>XLXN_4);
    
-   XLXI_2 : COMP8_HXILINX_MainScheme
-      port map (A(7 downto 0)=>XLXI_2_A_openSignal(7 downto 0),
-                B(7 downto 0)=>XLXI_2_B_openSignal(7 downto 0),
-                EQ=>open);
+   XLXI_7 : timer
+      port map (Clk=>CLK,
+                RST=>XLXN_2,
+                set_time=>XLXN_3,
+                stop=>XLXN_4,
+                end_time=>XLXN_5,
+                get_time=>XLXN_6);
+   
+   XLXI_9 : LetterGenerator_MUSER_MainScheme
+      port map (clk=>CLK,
+                Letter(7 downto 0)=>XLXN_24(7 downto 0));
    
 end BEHAVIORAL;
 
